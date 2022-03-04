@@ -12,7 +12,7 @@ spec:
   initContainers:
   - name: remove-wal
     image: busybox:1.28
-    command: ['sh', '-c', "if [ -d /prometheus/wal ]; then echo 'Yes'; else echo 'No'; fi; do echo 'hello world'; sleep 1; done"]
+    command: ['sh', '-c', "if [ -d /prometheus/wal ]; then echo 'Yes, Sir'; else echo 'No, Sir'; fi; echo 'hello world'; sleep 1;"]
   - name: init-myservice
     image: busybox:1.28
     command: ['sh', '-c', "until nslookup myservice.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for myservice; sleep 2; done"]
